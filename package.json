@@ -8,9 +8,15 @@
     "url": "https://github.com/alanrad/front-end-coding-test.git"
   },
   "keywords": [],
-  "author": "Alan Rad",
+  "authors": [{
+    "name": "Alan Rad",
+    "email": "me@alanrad.com"
+  }],
   "license": "MIT",
-  "homepage": "https://github.com/alanrad/front-end-coding-test",
+  "engines": {
+    "node": ">=10.18.0",
+    "npm": ">=6.13.4"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -28,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
+    "deploy": "react-scripts build & firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,7 +43,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "npm run lint",
+      "pre-commit": "yarn run lint",
       "pre-push": ""
     }
   },
