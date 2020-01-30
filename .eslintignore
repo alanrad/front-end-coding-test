@@ -7,3 +7,7 @@ coverage
 
 # misc
 src/serviceWorker.ts
+
+# dynamic app config
+build-config.js
+public/config.js
