@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // styles
-import './index.css';
+import 'styles/index.css';
 // components
-import { App } from './app/App';
-import { Failed } from './app/Failed';
+import { App } from 'app/App';
+import { Failed } from 'app/Failed';
 // utils
 import { isConfigAvailable } from 'utils';
 import * as serviceWorker from './serviceWorker';
