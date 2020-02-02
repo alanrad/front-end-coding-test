@@ -1,0 +1,61 @@
+body {
+  background-color: #f7f7f7;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+}
+
+.content-container {
+  min-width: 330px;
+  min-height: 250px;
+  background-color: #fff;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.app-header .title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.app-header {
+  padding: 8px;
+}
+
+.list-header {
+  padding: 4px 10px 10px 10px;
+}
+
+.list-header .title {
+  font-size: 21px;
+  color: #29aed6;
+  padding: 12px 0;
+}
+
+.list-item {
+  padding: 8px;
+  border-top: 1px solid gainsboro;
+}
+
+.list-item p {
+  padding: 4px 0;
+}
+
+.list-item .title {
+  padding: 8px 0 12px;
+}
+
+.list-item a {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0 10px 0;
+  text-decoration: none;
+  color: #29aed6;
+  font-weight: bold;
+  font-size: 13px;
+}
