@@ -28,6 +28,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true
     }
@@ -36,14 +37,12 @@ module.exports = {
     '@typescript-eslint',
     'react',
     'react-hooks',
-    'prettier',
     'jest',
   ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
@@ -58,11 +57,18 @@ module.exports = {
     'react/jsx-uses-vars': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'prettier/prettier': 'error',
     'jest/no-disabled-tests': 'warn',
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error'
   },
+  overrides: [
+    {
+        "files": ["**/*.tsx"],
+        "rules": {
+            "react/prop-types": "off"
+        }
+    }
+  ]
 };
