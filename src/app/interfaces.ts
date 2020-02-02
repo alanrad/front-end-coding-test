@@ -12,11 +12,35 @@ export interface IsurveyResultAction {
   type: string;
   payload: {
     surveyResults?: [] | IsurveyResult[];
+    surveyResultDetail?: [] | IsurveyResult[];
   };
 }
 
 export interface IsurveyResultsState {
   surveyResults: [] | IsurveyResult[];
+  surveyResultDetail: [] | IsurveyResultDetail[];
   loading: boolean;
   error: boolean;
+}
+
+export interface IsurveyResponses {
+  id: number;
+  question_id: number;
+  respondent_id: number;
+  response_content: string;
+}
+
+export interface Iquestions {
+  description: string;
+  question_type: string;
+  survey_responses: IsurveyResponses[];
+}
+
+export interface Ithemes {
+  name: string;
+  questions: Iquestions[];
+}
+
+export interface IsurveyResultDetail extends IsurveyResult {
+  themes?: Ithemes[];
 }
