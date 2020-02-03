@@ -1,0 +1,27 @@
+/*
+  Ratings Stars
+  Credit goes to Chris Coyier @css-tricks.com
+*/
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.rating > span.selected {
+  color: #29aed6;
+}
+
+.rating > .selected:before {
+  content: '\2605';
+  position: absolute;
+  left: 0;
+  color: #29aed6;
+}
