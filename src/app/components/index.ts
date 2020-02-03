@@ -4,6 +4,8 @@ export * from 'app/components/ListHeader';
 export * from 'app/components/List';
 export * from 'app/components/ListSurveyItem';
 export * from 'app/components/ListNotAvailable';
+export * from 'app/components/RatingStars';
+export * from 'app/components/Spinner';
 
 // # View Components
 
