@@ -41,7 +41,6 @@ export const useSurveyDetails = (
   id: string
 ): {
   details: undefined | IsurveyResultDetail;
-  surveyResultDetail: {} | IsurveyResultDetail;
 } => {
   const { state, dispatch } = useContext(stateContext);
   const { surveyResultDetail } = state;
@@ -61,6 +60,5 @@ export const useSurveyDetails = (
 
   return {
     details: surveyResultDetail.get(`/survey_results/${id}`),
-    surveyResultDetail,
   };
 };

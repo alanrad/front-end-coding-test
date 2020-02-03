@@ -9,20 +9,12 @@ interface IlistSurveytem {
 
 export const ListSurveyItem: FC<IlistSurveytem> = ({ survey }) => {
   // survey details mapping
-  const {
-    name,
-    url,
-    participant_count: numberOfParticipants,
-    response_rate: participationRate,
-    submitted_response_count: totalSubmitted,
-  } = survey;
+  const { name, url, participant_count: numberOfParticipants } = survey;
 
   return (
     <div className="list-item">
       <h3 className="title">{name}</h3>
-      <p>Number of participants: {numberOfParticipants}</p>
-      <p>Number of submitted response: {totalSubmitted}</p>
-      <p>Participation Rate: {participationRate}</p>
+      <p>{numberOfParticipants} Participants</p>
       <Link to={url}>View More</Link>
     </div>
   );

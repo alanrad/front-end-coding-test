@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 // components
-import { ListWrapper, ListHeader, RatingStars, Spinner } from 'app/components';
+import {
+  ListWrapper,
+  ListHeader,
+  DisplayDetails,
+  Spinner,
+} from 'app/components';
 // utils
 import { useSurveyDetails } from 'utils';
 
@@ -21,8 +26,7 @@ const Details: FC<RouteComponentProps<IpathParams>> = ({
     return (
       <ListWrapper>
         <ListHeader title={name} />
-        <RatingStars rating={3} />
-        <Link to="/surveys-results">View More</Link>
+        <DisplayDetails details={details} />
       </ListWrapper>
     );
   } else {
