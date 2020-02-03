@@ -12,13 +12,13 @@ export interface IsurveyResultAction {
   type: string;
   payload: {
     surveyResults?: [] | IsurveyResult[];
-    surveyResultDetail?: [] | IsurveyResult[];
+    surveyResultDetail?: IsurveyResultDetail;
   };
 }
 
 export interface IsurveyResultsState {
   surveyResults: [] | IsurveyResult[];
-  surveyResultDetail: [] | IsurveyResultDetail[];
+  surveyResultDetail: Map<string, IsurveyResultDetail>;
   loading: boolean;
   error: boolean;
 }

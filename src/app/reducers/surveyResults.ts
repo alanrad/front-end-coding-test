@@ -6,7 +6,7 @@ import { SET_SURVEYS, SET_SURVEY_DETAIL } from 'app/actions/types';
 
 export const surveysInitialState: IsurveyResultsState = {
   surveyResults: [],
-  surveyResultDetail: [],
+  surveyResultDetail: new Map(),
   loading: false,
   error: false,
 };
@@ -28,16 +28,22 @@ export const surveyResultsReducer = (
       }
       return state;
     case SET_SURVEY_DETAIL:
+      let update = false;
+      let mapData = new Map(state.surveyResultDetail);
+      if (typeof surveyResultDetail !== 'undefined') {
+        const { url } = surveyResultDetail;
+        if (mapData.get(url) === undefined) {
+          update = true;
+          // we use [url] as a unique key/id to store the new object in surveyResultDetail map
+          mapData = mapData.set(url, surveyResultDetail);
+        }
+      }
       // TODO: useMemo to compare state with new data to avoid unnecessary state change
       // this is just a temporary hack - no time to fix it
-      if (
-        Object.values(state.surveyResultDetail)[0] !==
-        Object.values(surveyResultDetail || [])[0]
-      ) {
+      if (update) {
         return {
           ...state,
-          surveyResultDetail:
-            typeof surveyResultDetail !== 'undefined' ? surveyResultDetail : [],
+          surveyResultDetail: mapData,
         };
       }
       return state;
