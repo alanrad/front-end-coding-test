@@ -8,7 +8,7 @@ interface IstarRating {
 }
 
 // returns an array of span elements to produce ☆☆☆☆☆
-export const makeRatingStarsRow = (rating: number) => {
+export const makeRatingStarsRow = (rating: number): ReactNode[] => {
   const starts: ReactNode[] = [];
   times(5)(num => {
     starts.push(
@@ -17,7 +17,7 @@ export const makeRatingStarsRow = (rating: number) => {
       </span>
     );
   });
-  return starts.reverse();
+  return starts;
 };
 
 // rating stars component - 0 to 5

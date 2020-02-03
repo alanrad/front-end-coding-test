@@ -10,7 +10,7 @@ body {
 }
 
 .content-container {
-  min-width: 330px;
+  width: 350px;
   min-height: 250px;
   background-color: #fff;
   border: 1px solid gainsboro;
@@ -50,7 +50,8 @@ body {
   padding: 8px 0 12px;
 }
 
-.list-item a {
+.list-item a,
+.list-wrapper a {
   display: flex;
   justify-content: flex-end;
   padding: 20px 0 10px 0;
@@ -58,4 +59,28 @@ body {
   color: #29aed6;
   font-weight: bold;
   font-size: 13px;
+}
+
+.survey-details .rating {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0 10px 0;
+}
+
+.survey-details .title {
+  font-weight: bold;
+  padding: 8px 0 12px;
+}
+
+.survey-details {
+  padding: 4px 10px 10px 10px;
+}
+
+.survey-details .description-box {
+  padding: 12px 0;
+  border-top: 1px solid gainsboro;
+}
+
+.survey-details p {
+  line-height: 22px;
 }
