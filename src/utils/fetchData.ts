@@ -29,8 +29,8 @@ export const fetchSurveyResult = async (
 
 export const fetchSurveyResultDetail = async (
   source: string
-): Promise<IsurveyResultDetail[]> => {
-  return new Promise<IsurveyResultDetail[]>((resolve, reject) => {
+): Promise<IsurveyResultDetail> => {
+  return new Promise<IsurveyResultDetail>((resolve, reject) => {
     axios
       .get(source)
       .then(response => {

@@ -23,7 +23,7 @@ export const setSurveyResults = (
 
 // setSurveyResults function returns an action to update the surveyResults
 export const setSurveyDetail = (
-  data: IsurveyResultDetail[]
+  data: IsurveyResultDetail
 ): IsurveyResultAction => {
   return {
     type: SET_SURVEY_DETAIL,

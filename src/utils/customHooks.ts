@@ -40,14 +40,16 @@ export const useSurveyResults = (): { surveyResults: [] | IsurveyResult[] } => {
 export const useSurveyDetails = (
   id: string
 ): {
-  surveyResultDetail: [] | IsurveyResultDetail[];
+  details: undefined | IsurveyResultDetail;
+  surveyResultDetail: {} | IsurveyResultDetail;
 } => {
   const { state, dispatch } = useContext(stateContext);
   const { surveyResultDetail } = state;
+  // const [details, updateDetails] = useState(surveyResultDetail.get(`/survey_results/${id}`));
 
   useEffect(() => {
-    // just a basic example of how to avoid fetching data from the api multiple times if data is already stored
-    if (!surveyResultDetail.length) {
+    // only fetch data if needed otherwise get it from store
+    if (surveyResultDetail.get(`/survey_results/${id}`) === undefined) {
       // get a list of the surveys that are stored in the database
       fetchSurveyResultDetail(`${rootUrl}${surveyPath}/${id}`).then(
         response => {
@@ -58,6 +60,7 @@ export const useSurveyDetails = (
   }, [id, surveyResultDetail, dispatch]);
 
   return {
+    details: surveyResultDetail.get(`/survey_results/${id}`),
     surveyResultDetail,
   };
 };
