@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 // components
-import { ListWrapper, ListHeader } from 'app/components';
+import { ListWrapper, ListHeader, RatingStars, Spinner } from 'app/components';
 // utils
 import { useSurveyDetails } from 'utils';
 
@@ -15,15 +15,19 @@ const Details: FC<RouteComponentProps<IpathParams>> = ({
     params: { id },
   },
 }) => {
-  const { surveyResultDetail } = useSurveyDetails(id);
-  console.log(surveyResultDetail);
-
-  return (
-    <ListWrapper>
-      <ListHeader title="Survey Details" />
-      <Link to="/surveys-results">View More</Link>
-    </ListWrapper>
-  );
+  const { details } = useSurveyDetails(id);
+  if (typeof details !== 'undefined') {
+    const { name } = details;
+    return (
+      <ListWrapper>
+        <ListHeader title={name} />
+        <RatingStars rating={3} />
+        <Link to="/surveys-results">View More</Link>
+      </ListWrapper>
+    );
+  } else {
+    return <Spinner />;
+  }
 };
 
 export const SurveyDetails = withRouter(Details);
