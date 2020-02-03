@@ -42,5 +42,5 @@ export interface Ithemes {
 }
 
 export interface IsurveyResultDetail extends IsurveyResult {
-  themes?: Ithemes[];
+  themes: Ithemes[];
 }
