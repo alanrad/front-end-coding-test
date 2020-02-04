@@ -1,6 +1,6 @@
 {
   "name": "front-end-coding-test",
-  "description": "Culture Amp Front End Coding Test: Build a web front end that displays the data supplied by RESTful API.",
+  "description": "Front End Coding Test: Build a web front end that displays the data supplied by RESTful API.",
   "version": "0.1.1",
   "private": false,
   "repository": {
